@@ -5,7 +5,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
 
-  ssr: false,
+  nitro: { preset: 'netlify' },
+
+  // ssr: false,
 
   runtimeConfig: {
     stripeSecretKey: process.env.STRIPE_SECRET_KEY,
