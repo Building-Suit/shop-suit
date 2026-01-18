@@ -8,7 +8,7 @@ export const supabase = () => {
   const config = useRuntimeConfig();
 
   const supabaseUrl = config.public.supabaseUrl;
-  const supabaseKey = config.public.supabaseKey;
+  const supabaseKey = import.meta.client ? config.public.supabaseKey : config.supabaseServiceKey;
 
   supabaseRef.value = createClient(supabaseUrl, supabaseKey);
   return supabaseRef.value;
