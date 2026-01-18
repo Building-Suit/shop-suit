@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   nitro: { preset: 'netlify' },
 
-  // ssr: false,
+  ssr: false,
 
   runtimeConfig: {
     stripeSecretKey: process.env.STRIPE_SECRET_KEY,
