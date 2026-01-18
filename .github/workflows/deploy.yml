@@ -55,6 +55,15 @@ jobs:
 
       - name: Deploy to Netlify
         id: netlify_deploy
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          APP_URL: ${{ secrets.SHOP_ADMIN_URL }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+          STRIPE_PRICE_BASIC: ${{ secrets.STRIPE_PRICE_BASIC }}
+          STRIPE_PRICE_PRO: ${{ secrets.STRIPE_PRICE_PRO }}
         run: |
           npx netlify deploy \
             --prod \
@@ -62,13 +71,5 @@ jobs:
             --dir ${{ matrix.app.path }}/dist \
             --functions .netlify/functions-internal \
             --site ${{ matrix.app.site_id }} \
-            --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} \
-            --env.SUPABASE_URL="${{ secrets.SUPABASE_URL }}" \
-            --env.SUPABASE_KEY="${{ secrets.SUPABASE_KEY }}" \
-            --env.SUPABASE_SERVICE_KEY="${{ secrets.SUPABASE_SERVICE_KEY }}" \
-            --env.APP_URL="${{ secrets.SHOP_ADMIN_URL }}" \
-            --env.STRIPE_SECRET_KEY="${{ secrets.STRIPE_SECRET_KEY }}" \
-            --env.STRIPE_WEBHOOK_SECRET="${{ secrets.STRIPE_WEBHOOK_SECRET }}" \
-            --env.STRIPE_PRICE_BASIC="${{ secrets.STRIPE_PRICE_BASIC }}" \
-            --env.STRIPE_PRICE_PRO="${{ secrets.STRIPE_PRICE_PRO }}"
+            --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
         # if: steps.check_changes.outputs.changed == 'true'
