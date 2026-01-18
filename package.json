@@ -1,12 +1,30 @@
 {
-  "name": "BuildingSuit",
+  "name": "buildingsuit",
   "version": "1.0.0",
   "private": true,
   "description": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "with-env": "dotenv -e ./.env --",
+    "dev:shop-admin": "pnpm with-env pnpm --filter @buildingsuit/shop-admin dev",
+    "build:shop-admin": "pnpm with-env pnpm --filter @buildingsuit/shop-admin build",
+    "test:shop-admin": "pnpm with-env pnpm --filter @buildingsuit/shop-admin test",
+    "db:start": "pnpm --filter @buildingsuit/supabase db:start",
+    "db:stop": "pnpm --filter @buildingsuit/supabase db:stop",
+    "db:reset": "pnpm --filter @buildingsuit/supabase db:reset",
+    "db:push": "pnpm --filter @buildingsuit/supabase db:push",
+    "db:pull": "pnpm --filter @buildingsuit/supabase db:pull",
+    "db:gen-types": "pnpm --filter @buildingsuit/supabase db:gen-types"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0"
+  },
+  "pnpm-workspace": {
+    "packages": [
+      "packages/*",
+      "apps/*"
+    ]
   },
   "keywords": [],
   "author": "",
