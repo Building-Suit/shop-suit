@@ -46,12 +46,12 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        if: steps.check_changes.outputs.changed == 'true'
+        # if: steps.check_changes.outputs.changed == 'true'
 
       - name: Install dependencies
         # run pnpm install within the app directory by using the matrix path
         run: pnpm install
-        if: steps.check_changes.outputs.changed == 'true'
+        # if: steps.check_changes.outputs.changed == 'true'
 
       - name: Deploy to Netlify
         id: netlify_deploy
@@ -63,4 +63,4 @@ jobs:
             --functions .netlify/functions-internal \
             --site ${{ matrix.app.site_id }} \
             --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        if: steps.check_changes.outputs.changed == 'true'
+        # if: steps.check_changes.outputs.changed == 'true'
