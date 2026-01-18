@@ -16,7 +16,7 @@ importers:
     dependencies:
       '@buildingsuit/supabase':
         specifier: workspace:*
-        version: link:../../packages/supabase
+        version: link:../../database/supabase
       '@nuxtjs/color-mode':
         specifier: 4.0.0
         version: 4.0.0(magicast@0.5.1)
@@ -73,7 +73,7 @@ importers:
         specifier: ^0.1.4
         version: 0.1.4(typescript@5.9.3)
 
-  packages/supabase:
+  database/supabase:
     devDependencies:
       supabase:
         specifier: ^1.142.2
