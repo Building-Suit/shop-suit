@@ -3,6 +3,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@vueuse/nuxt'],
+
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    },
+  },
+
   shadcn: {
     /**
      * Prefix for all the imported component.
@@ -15,6 +22,6 @@ export default defineNuxtConfig({
      * @link https://nuxt.com/docs/api/nuxt-config#alias
      * @default "@/components/ui"
      */
-    componentDir: '@/components/ui'
-  }
-})
+    componentDir: '@/components/ui',
+  },
+});

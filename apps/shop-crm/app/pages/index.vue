@@ -1,30 +1,44 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'landing',
+});
 
+const sections = [
+  {
+    id: '',
+    title: 'Hero',
+  },
+  {
+    id: 'features',
+    title: 'Features',
+  },
+  {
+    id: 'pricing',
+    title: 'Pricing',
+  },
+  {
+    id: 'faqs',
+    title: 'FAQs',
+  },
+];
 </script>
 
 <template>
-  <h1>hello from index</h1>
+  <template v-for="section in sections" :key="section.id">
+    <LandingHeroBackground
+      v-if="section.id === ''"
+      :id="section.id"
+      class="h-screen w-full flex flex-col items-center justify-center"
+    >
+      <h1 class="text-4xl font-bold text-secondary">{{ section.title }}</h1>
+    </LandingHeroBackground>
 
-  <div class="grid grid-cols-2 gap-2 p-2 w-1/4">
-    <Button>No Variant</Button>
-    <Button disabled>No Variant disabled</Button>
-
-    <Button variant="secondary">Secondary</Button>
-    <Button variant="secondary" disabled>Secondary disabled</Button>
-
-    <Button variant="outline">Outline</Button>
-    <Button variant="outline" disabled>Outline disabled</Button>
-
-    <Button variant="ghost">Ghost</Button>
-    <Button variant="ghost" disabled>Ghost disabled</Button>
-
-    <Button variant="destructive">Destructive</Button>
-    <Button variant="destructive" disabled>Destructive disabled</Button>
-
-    <Button variant="default">Default</Button>
-    <Button variant="default" disabled>Default disabled</Button>
-
-    <Button variant="link">Link</Button>
-    <Button variant="link" disabled>Link disabled</Button>
-  </div>
+    <div
+      v-else
+      :id="section.id"
+      class="h-screen w-full flex flex-col items-center justify-center"
+    >
+      <h1 class="text-4xl font-bold text-secondary">{{ section.title }}</h1>
+    </div>
+  </template>
 </template>
