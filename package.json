@@ -7,9 +7,9 @@
   "main": "index.js",
   "scripts": {
     "with-env": "dotenv -e ./.env --",
-    "dev:shop-admin": "pnpm with-env pnpm --filter @buildingsuit/shop-admin dev",
-    "build:shop-admin": "pnpm with-env pnpm --filter @buildingsuit/shop-admin build",
-    "test:shop-admin": "pnpm with-env pnpm --filter @buildingsuit/shop-admin test",
+    "dev:shop-crm": "pnpm with-env pnpm --filter @buildingsuit/shop-crm dev",
+    "build:shop-crm": "pnpm with-env pnpm --filter @buildingsuit/shop-crm build",
+    "test:shop-crm": "pnpm with-env pnpm --filter @buildingsuit/shop-crm test",
     "db:start": "pnpm --filter @buildingsuit/supabase db:start",
     "db:stop": "pnpm --filter @buildingsuit/supabase db:stop",
     "db:reset": "pnpm --filter @buildingsuit/supabase db:reset",
