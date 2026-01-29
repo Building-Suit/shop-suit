@@ -3,18 +3,20 @@ export default defineI18nLocale(async locale => ({
   login: 'تسجيل الدخول',
   startFreeTrial: 'ابدأ التجربة المجانية',
 
-  /* Landing Nav Links */
-  features: 'المميزات',
-  pricing: 'الأسعار',
-  faqs: 'الأسئلة الشائعة',
+  nav: {
+    /* Landing Nav Links */
+    features: 'المميزات',
+    pricing: 'الأسعار',
+    faqs: 'الأسئلة الشائعة',
 
-  /* Landing Company Links */
-  aboutUs: 'من نحن',
-  contact: 'اتصل بنا',
+    /* Landing Company Links */
+    aboutUs: 'من نحن',
+    contact: 'اتصل بنا',
 
-  /* Landing Legal Links */
-  privacyPolicy: 'سياسة الخصوصية',
-  termsOfService: 'شروط الخدمة',
+    /* Landing Legal Links */
+    privacyPolicy: 'سياسة الخصوصية',
+    termsOfService: 'شروط الخدمة',
+  },
 
   /* Landing Footer */
   footer: {
@@ -42,7 +44,7 @@ export default defineI18nLocale(async locale => ({
 
   /* Landing Social Proof Bar */
   socialProofBar: {
-    trustedBy: 'موثوق به من قبل أكثر من 500 متجر في جميع أنحاء مصر',
+    trustedBy: 'أكثر من 500 متجر في مصر يثقون بنا',
     industries: {
       stores: 'متاجر',
       electricians: 'الكهرباء',
@@ -52,6 +54,38 @@ export default defineI18nLocale(async locale => ({
       pharmacy: 'الصيدليات',
       repairs: 'صيانة',
       clothing: 'ملابس',
+    },
+  },
+
+  /* Landing Features */
+  features: {
+    title: 'كل اللي محتاجه علشان',
+    subtitle: 'تكبّر مشروعك',
+    description:
+      'من الفواتير للمخزون، إدارة كاملة لكل تفاصيل محلك في منصة واحدة قوية.',
+    invoicesAndServices: {
+      title: 'الفواتير والخدمات',
+      description:
+        'أنشئ واطبع وتابع الفواتير بسهولة. أضف الخصومات والخدمات مع دقة كاملة في الحسابات.',
+      description2: 'الطباعة بمقاسات A4 و A5 أو على إيصال حراري',
+    },
+    employeesManagement: {
+      title: 'إدارة الموظفين',
+      description:
+        'أضف أعضاء الفريق مع صلاحيات وأدوار مخصصة. تابع المهام وسيطر على كل التفاصيل.',
+      description2: 'أدوار مخصصة بصلاحيات مرنة',
+    },
+    dashboardAndReports: {
+      title: 'لوحة التحكم والتقارير',
+      description:
+        'تابع الإيرادات والمصروفات والأرباح في نظرة واحدة. خُد قرارات صح بدعم بيانات دقيقة.',
+      description2: 'اعرف الفرق بين الإيراد والربح الحقيقي',
+    },
+    expensesTracking: {
+      title: 'متابعة المصروفات',
+      description:
+        'سجّل كل المصروفات — الإيجار، المستلزمات، المرافق. افهم تكلفتك الحقيقية وزوّد أرباحك.',
+      description2: 'مصروفات لمرة واحدة أو متكررة',
     },
   },
 }));

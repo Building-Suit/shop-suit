@@ -14,6 +14,6 @@ const { navLinks, toggleMenu } = useNavigation();
     class="text-muted-foreground"
     @click="() => toggleMenu()"
   >
-    {{ $t(link.label) }}
+    {{ $t(`nav.${link.label}`) }}
   </Button>
 </template>

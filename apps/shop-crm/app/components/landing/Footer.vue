@@ -39,7 +39,7 @@ const footerColumns = [
           <ul class="flex flex-col gap-2 text-muted-foreground">
             <li v-for="link in column.links" :key="link.to">
               <NuxtLink :to="link.to" class="hover:underline">
-                {{ $t(link.label) }}
+                {{ $t(`nav.${link.label}`) }}
               </NuxtLink>
             </li>
           </ul>

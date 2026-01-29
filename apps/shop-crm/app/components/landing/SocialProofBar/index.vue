@@ -37,7 +37,7 @@ const industries = [
 
 <template>
   <div
-    class="w-full bg-primary-foreground/10 rounded-lg flex flex-col items-center justify-center gap-10 my-12"
+    class="w-full bg-primary-foreground/10 rounded-lg flex flex-col items-center justify-center gap-10 mt-12 mb-28"
   >
     <p class="text-lg font-bold text-primary">
       {{ $t('socialProofBar.trustedBy') }}

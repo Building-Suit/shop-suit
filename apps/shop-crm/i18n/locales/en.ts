@@ -3,18 +3,20 @@ export default defineI18nLocale(async locale => ({
   login: 'Login',
   startFreeTrial: 'Start Free Trial',
 
-  /* Landing Nav Links */
-  features: 'Features',
-  pricing: 'Pricing',
-  faqs: 'FAQs',
+  nav: {
+    /* Landing Nav Links */
+    features: 'Features',
+    pricing: 'Pricing',
+    faqs: 'FAQs',
 
-  /* Landing Company Links */
-  aboutUs: 'About Us',
-  contact: 'Contact',
+    /* Landing Company Links */
+    aboutUs: 'About Us',
+    contact: 'Contact',
 
-  /* Landing Legal Links */
-  privacyPolicy: 'Privacy Policy',
-  termsOfService: 'Terms of Service',
+    /* Landing Legal Links */
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Terms of Service',
+  },
 
   /* Landing Footer */
   footer: {
@@ -52,6 +54,38 @@ export default defineI18nLocale(async locale => ({
       pharmacy: 'Pharmacy',
       repairs: 'Repairs',
       clothing: 'Clothing',
+    },
+  },
+
+  /* Landing Features */
+  features: {
+    title: 'Everything You Need to',
+    subtitle: 'Grow Your Business',
+    description:
+      'From invoices to inventory, manage every aspect of your shop in one powerful platform.',
+    invoicesAndServices: {
+      title: 'Invoices & Services',
+      description:
+        'Create, print, and track invoices. Add discounts, services, and work with full math accuracy.',
+      description2: 'Print on A4, A5, or thermal receipt',
+    },
+    employeesManagement: {
+      title: 'Employees Management',
+      description:
+        'Add team members with custom roles and permissions. Track who does what and maintain full control.',
+      description2: 'Custom roles with flexible permissions',
+    },
+    dashboardAndReports: {
+      title: 'Dashboard & Reports',
+      description:
+        'See your revenue, expenses, and profit at a glance. Make informed decisions with accurate data.',
+      description2: 'Know the difference between revenue and real profit',
+    },
+    expensesTracking: {
+      title: 'Expenses Tracking',
+      description:
+        'Log every expense — rent, supplies, utilities. Understand your true costs and maximize profit.',
+      description2: 'One-time or recurring expenses',
     },
   },
 }));

@@ -5,10 +5,6 @@ definePageMeta({
 
 const sections = [
   {
-    id: 'features',
-    title: 'Features',
-  },
-  {
     id: 'pricing',
     title: 'Pricing',
   },
@@ -23,6 +19,8 @@ const sections = [
   <LandingHero />
 
   <LandingSocialProofBar />
+
+  <LandingFeatures />
 
   <div
     v-for="section in sections"
