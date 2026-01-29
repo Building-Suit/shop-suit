@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const { navLinks, companyLinks, legalLinks } = useNavigation();
 
-const footerLinks = [
-  { label: 'Product', links: navLinks },
-  { label: 'Company', links: companyLinks },
-  { label: 'Legal', links: legalLinks },
+const footerColumns = [
+  { label: 'product', links: navLinks },
+  { label: 'company', links: companyLinks },
+  { label: 'legal', links: legalLinks },
 ];
 </script>
 
@@ -23,22 +23,23 @@ const footerLinks = [
           </NuxtLink>
 
           <p class="text-sm leading-relaxed text-muted-foreground">
-            The all-in-one CRM for Egyptian small businesses. Invoices,
-            employees, expenses, and inventory — all in one place.
+            {{ $t('footer.description') }}
           </p>
         </div>
 
         <div
-          v-for="link in footerLinks"
-          :key="link.label"
+          v-for="column in footerColumns"
+          :key="column.label"
           class="flex flex-col gap-6"
         >
-          <h3 class="font-semibold text-lg">{{ link.label }}</h3>
+          <h3 class="font-semibold text-lg">
+            {{ $t(`footer.${column.label}`) }}
+          </h3>
 
           <ul class="flex flex-col gap-2 text-muted-foreground">
-            <li v-for="l in link.links" :key="l.to">
-              <NuxtLink :to="l.to" class="hover:underline">
-                {{ l.label }}
+            <li v-for="link in column.links" :key="link.to">
+              <NuxtLink :to="link.to" class="hover:underline">
+                {{ $t(link.label) }}
               </NuxtLink>
             </li>
           </ul>
@@ -51,10 +52,10 @@ const footerLinks = [
         <p>
           © {{ new Date().getFullYear() }} Shop CRM
           <small>by <strong>Building Suit</strong></small>
-          . All rights reserved.
+          . {{ $t('footer.allRightsReserved') }}.
         </p>
 
-        <div>Language Switcher</div>
+        <LanguageSwitcher />
       </div>
     </div>
   </footer>

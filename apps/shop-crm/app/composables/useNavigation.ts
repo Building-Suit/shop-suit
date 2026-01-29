@@ -1,24 +1,24 @@
-export const useNavigation = () => {
-  const isMenuOpen = ref(false);
+const isMenuOpen = ref(false);
 
+export const useNavigation = () => {
   const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
   };
 
   const navLinks = [
-    { label: 'Features', to: '#features' },
-    { label: 'Pricing', to: '#pricing' },
-    { label: 'FAQs', to: '#faqs' },
+    { label: 'features', to: '#features' },
+    { label: 'pricing', to: '#pricing' },
+    { label: 'faqs', to: '#faqs' },
   ];
 
   const companyLinks = [
-    { label: 'About Us', to: '/' },
-    { label: 'Contact', to: '/' },
+    { label: 'aboutUs', to: '/' },
+    { label: 'contact', to: '/' },
   ];
 
   const legalLinks = [
-    { label: 'Privacy Policy', to: '/' },
-    { label: 'Terms of Service', to: '/' },
+    { label: 'privacyPolicy', to: '/' },
+    { label: 'termsOfService', to: '/' },
   ];
 
   return {

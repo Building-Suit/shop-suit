@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components';
 
-const { navLinks, isMenuOpen } = useNavigation();
+const { navLinks, toggleMenu } = useNavigation();
 </script>
 
 <template>
@@ -12,7 +12,8 @@ const { navLinks, isMenuOpen } = useNavigation();
     :to="link.to"
     variant="ghost"
     class="text-muted-foreground"
+    @click="() => toggleMenu()"
   >
-    {{ link.label }}
+    {{ $t(link.label) }}
   </Button>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components';
 
-const { isMenuOpen } = useNavigation();
+const { toggleMenu } = useNavigation();
 </script>
 
 <template>
@@ -12,18 +12,18 @@ const { isMenuOpen } = useNavigation();
       :as="NuxtLink"
       to="/auth/login"
       variant="outline"
-      @click="isMenuOpen = false"
+      @click="() => toggleMenu()"
     >
-      Login
+      {{ $t('login') }}
     </Button>
 
     <Button
       :as="NuxtLink"
       to="#pricing"
       variant="secondary"
-      @click="isMenuOpen = false"
+      @click="() => toggleMenu()"
     >
-      Start Free Trial
+      {{ $t('startFreeTrial') }}
     </Button>
   </div>
 </template>
