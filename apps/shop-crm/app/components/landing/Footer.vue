@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <footer class="bg-primary-dark! text-primary-foreground py-16">
+  <footer class="bg-primary-dark text-primary-foreground py-16 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         <div class="flex flex-col gap-6">
@@ -70,15 +70,15 @@
       </div>
 
       <div
-        class="flex items-center justify-between border-t border-primary-foreground/10 pt-8"
+        class="lg:flex grid gap-4 text-center items-center lg:justify-between border-t border-primary-foreground/10 pt-8"
       >
-        <span>
+        <p>
           © {{ new Date().getFullYear() }} Shop CRM
           <small>by <strong>Building Suit</strong></small>
           . All rights reserved.
-        </span>
+        </p>
 
-        Language Switcher
+        <div>Language Switcher</div>
       </div>
     </div>
   </footer>

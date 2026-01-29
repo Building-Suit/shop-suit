@@ -6,6 +6,8 @@ const navLinks = [
   { label: 'Pricing', to: '#pricing' },
   { label: 'FAQs', to: '#faqs' },
 ];
+
+const isMenuOpen = ref(false);
 </script>
 
 <template>
@@ -16,7 +18,13 @@ const navLinks = [
       'fixed top-0 z-50',
     ]"
   >
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+    <div
+      :class="[
+        'max-w-6xl mx-auto',
+        'flex items-center justify-between px-4 py-3',
+        'z-50',
+      ]"
+    >
       <NuxtLink to="/" class="flex flex-col items-center">
         <span class="font-extrabold text-xl tracking-tight text-primary">
           Shop CRM
@@ -26,7 +34,7 @@ const navLinks = [
         </span>
       </NuxtLink>
 
-      <div class="flex items-center gap-2">
+      <div class="lg:flex hidden items-center gap-2">
         <Button
           v-for="link in navLinks"
           :key="link.to"
@@ -39,13 +47,84 @@ const navLinks = [
         </Button>
       </div>
 
-      <div class="flex items-center gap-2">
-        <Button :as="NuxtLink" to="/auth/login" variant="ghost"> Login </Button>
+      <div class="lg:flex hidden items-center gap-2">
+        <Button :as="NuxtLink" to="/auth/login" variant="outline">
+          Login
+        </Button>
 
         <Button :as="NuxtLink" to="#pricing" variant="secondary">
           Start Free Trial
         </Button>
       </div>
+
+      <div
+        class="lg:hidden flex items-center gap-2"
+        @click="isMenuOpen = !isMenuOpen"
+      >
+        <Icon
+          v-show="!isMenuOpen"
+          name="solar:hamburger-menu-outline"
+          size="32"
+        />
+        <Icon v-show="isMenuOpen" name="solar:close-circle-outline" size="32" />
+      </div>
     </div>
+
+    <Transition name="slide-fade">
+      <div
+        v-if="isMenuOpen"
+        :class="[
+          'lg:hidden grid items-start gap-2 p-4 bg-background',
+          'absolute inset-x-0 -z-10 overflow-hidden',
+          'border-b border-border',
+        ]"
+      >
+        <Button
+          v-for="link in navLinks"
+          :key="link.to"
+          :as="NuxtLink"
+          :to="link.to"
+          variant="ghost"
+          class="text-muted-foreground"
+          @click="isMenuOpen = false"
+        >
+          {{ link.label }}
+        </Button>
+
+        <div class="grid items-center gap-2 border-t border-border pt-4">
+          <Button
+            :as="NuxtLink"
+            to="/auth/login"
+            variant="outline"
+            @click="isMenuOpen = false"
+          >
+            Login
+          </Button>
+
+          <Button
+            :as="NuxtLink"
+            to="#pricing"
+            variant="secondary"
+            @click="isMenuOpen = false"
+          >
+            Start Free Trial
+          </Button>
+        </div>
+      </div>
+    </Transition>
   </header>
 </template>
+
+<style>
+.slide-fade-enter-active {
+  transition: all 0.1s ease-out;
+}
+.slide-fade-leave-active {
+  transition: all 0.1s ease-in;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+</style>
