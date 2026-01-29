@@ -1,13 +1,5 @@
 <script setup lang="ts">
-import { NuxtLink } from '#components';
-
-const navLinks = [
-  { label: 'Features', to: '#features' },
-  { label: 'Pricing', to: '#pricing' },
-  { label: 'FAQs', to: '#faqs' },
-];
-
-const isMenuOpen = ref(false);
+const { isMenuOpen, toggleMenu } = useNavigation();
 </script>
 
 <template>
@@ -35,31 +27,14 @@ const isMenuOpen = ref(false);
       </NuxtLink>
 
       <div class="lg:flex hidden items-center gap-2">
-        <Button
-          v-for="link in navLinks"
-          :key="link.to"
-          :as="NuxtLink"
-          :to="link.to"
-          variant="ghost"
-          class="text-muted-foreground"
-        >
-          {{ link.label }}
-        </Button>
+        <LandingHeaderNavLinks />
       </div>
 
-      <div class="lg:flex hidden items-center gap-2">
-        <Button :as="NuxtLink" to="/auth/login" variant="outline">
-          Login
-        </Button>
-
-        <Button :as="NuxtLink" to="#pricing" variant="secondary">
-          Start Free Trial
-        </Button>
-      </div>
+      <LandingHeaderCTAs class="lg:flex hidden items-center gap-2" />
 
       <div
         class="lg:hidden flex items-center gap-2"
-        @click="isMenuOpen = !isMenuOpen"
+        @click="() => toggleMenu()"
       >
         <Icon
           v-show="!isMenuOpen"
@@ -79,37 +54,11 @@ const isMenuOpen = ref(false);
           'border-b border-border',
         ]"
       >
-        <Button
-          v-for="link in navLinks"
-          :key="link.to"
-          :as="NuxtLink"
-          :to="link.to"
-          variant="ghost"
-          class="text-muted-foreground"
-          @click="isMenuOpen = false"
-        >
-          {{ link.label }}
-        </Button>
+        <LandingHeaderNavLinks />
 
-        <div class="grid items-center gap-2 border-t border-border pt-4">
-          <Button
-            :as="NuxtLink"
-            to="/auth/login"
-            variant="outline"
-            @click="isMenuOpen = false"
-          >
-            Login
-          </Button>
-
-          <Button
-            :as="NuxtLink"
-            to="#pricing"
-            variant="secondary"
-            @click="isMenuOpen = false"
-          >
-            Start Free Trial
-          </Button>
-        </div>
+        <LandingHeaderCTAs
+          class="grid items-center gap-2 border-t border-border pt-4"
+        />
       </div>
     </Transition>
   </header>

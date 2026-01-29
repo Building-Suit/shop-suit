@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { navLinks, companyLinks, legalLinks } = useNavigation();
+
+const footerLinks = [
+  { label: 'Product', links: navLinks },
+  { label: 'Company', links: companyLinks },
+  { label: 'Legal', links: legalLinks },
+];
+</script>
 
 <template>
   <footer class="bg-primary-dark text-primary-foreground py-16 px-6">
@@ -20,49 +28,17 @@
           </p>
         </div>
 
-        <div class="flex flex-col gap-6">
-          <h3 class="font-semibold text-lg">Product</h3>
-          <ul class="flex flex-col gap-2 text-muted-foreground">
-            <li>
-              <NuxtLink to="#features" class="hover:underline">
-                Features
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="#pricing" class="hover:underline">
-                Pricing
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
+        <div
+          v-for="link in footerLinks"
+          :key="link.label"
+          class="flex flex-col gap-6"
+        >
+          <h3 class="font-semibold text-lg">{{ link.label }}</h3>
 
-        <div class="flex flex-col gap-6">
-          <h3 class="font-semibold text-lg">Company</h3>
           <ul class="flex flex-col gap-2 text-muted-foreground">
-            <li>
-              <NuxtLink to="/about" class="hover:underline">
-                About Us
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/contact" class="hover:underline">
-                Contact
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
-
-        <div class="flex flex-col gap-6">
-          <h3 class="font-semibold text-lg">Legal</h3>
-          <ul class="flex flex-col gap-2 text-muted-foreground">
-            <li>
-              <NuxtLink to="/privacy-policy" class="hover:underline">
-                Privacy Policy
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/terms-of-service" class="hover:underline">
-                Terms of Service
+            <li v-for="l in link.links" :key="l.to">
+              <NuxtLink :to="l.to" class="hover:underline">
+                {{ l.label }}
               </NuxtLink>
             </li>
           </ul>
