@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components';
 
-const { navLinks } = useNavigation();
+const { navLinks, isMenuOpen } = useNavigation();
 </script>
 
 <template>

@@ -6,6 +6,8 @@ const { isMenuOpen } = useNavigation();
 
 <template>
   <div>
+    <LanguageSwitcher />
+
     <Button
       :as="NuxtLink"
       to="/auth/login"
