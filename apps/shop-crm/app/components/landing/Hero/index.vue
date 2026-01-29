@@ -22,11 +22,7 @@ const trustSignals = ['trustSignal1', 'trustSignal2', 'trustSignal3'];
         {{ $t('hero.description') }}
       </p>
 
-      <!-- <p class="text-md text-primary-foreground/80 sm:text-lg max-w-xl mx-auto">
-        Running a shop is hard. Messy invoices, forgotten expenses, and guessing
-        if you're actually profitable? Even harder.
-      </p> -->
-
+      <!-- Visual -->
       <div class="w-full h-96 bg-primary-foreground/60 rounded-lg"></div>
 
       <div class="flex flex-col sm:flex-row gap-4">

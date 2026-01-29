@@ -22,6 +22,8 @@ const sections = [
 <template>
   <LandingHero />
 
+  <LandingSocialProofBar />
+
   <div
     v-for="section in sections"
     :key="section.id"

@@ -39,4 +39,19 @@ export default defineI18nLocale(async locale => ({
     trustSignal2: 'تبقى بياناتك آمنة وخاصة',
     trustSignal3: 'يمكنك تصدير بياناتك في أي وقت',
   },
+
+  /* Landing Social Proof Bar */
+  socialProofBar: {
+    trustedBy: 'موثوق به من قبل أكثر من 500 متجر في جميع أنحاء مصر',
+    industries: {
+      stores: 'متاجر',
+      electricians: 'الكهرباء',
+      coffee: 'كافيهات',
+      retail: 'بيع بالتجزئة',
+      barbers: 'الحلاقين',
+      pharmacy: 'الصيدليات',
+      repairs: 'صيانة',
+      clothing: 'ملابس',
+    },
+  },
 }));

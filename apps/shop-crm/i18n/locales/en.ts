@@ -39,4 +39,19 @@ export default defineI18nLocale(async locale => ({
     trustSignal2: 'Your data stays private and secure',
     trustSignal3: 'Export your data anytime',
   },
+
+  /* Landing Social Proof Bar */
+  socialProofBar: {
+    trustedBy: 'Trusted by 500+ shops across Egypt',
+    industries: {
+      stores: 'Stores',
+      electricians: 'Electricians',
+      coffee: 'Coffee',
+      retail: 'Retail',
+      barbers: 'Barbers',
+      pharmacy: 'Pharmacy',
+      repairs: 'Repairs',
+      clothing: 'Clothing',
+    },
+  },
 }));

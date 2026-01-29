@@ -33,8 +33,8 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
     strategy: 'no_prefix',
-    // strategy: 'prefix_except_default',
     defaultLocale: 'ar',
     defaultDirection: 'rtl',
     detectBrowserLanguage: false, // Disable browser detection
