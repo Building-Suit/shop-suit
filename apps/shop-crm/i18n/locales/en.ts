@@ -110,5 +110,13 @@ export default defineI18nLocale(async locale => ({
     subtitle: 'Pricing',
     description:
       "Start free, upgrade when you're ready. No hidden fees, cancel anytime.",
+    notes: {
+      allPlansIncludeFreeTrial:
+        'All plans include a 30-day free trial. No credit card required.',
+      switchPlansAnytime: 'Switch plans anytime during your trial.',
+      upgradeMidTrial:
+        "Need to upgrade mid-trial? You'll start paying immediately, but keep your data.",
+    },
+    comingSoon: 'Coming soon: Multi-shop support & more.',
   },
 }));

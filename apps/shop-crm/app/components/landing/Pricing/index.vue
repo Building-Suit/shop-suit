@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const pricingNotes = [
+  'pricing.notes.allPlansIncludeFreeTrial',
+  'pricing.notes.switchPlansAnytime',
+  'pricing.notes.upgradeMidTrial',
+];
+</script>
 
 <template>
   <div id="pricing" class="bg-muted/40 py-36">
@@ -20,6 +26,20 @@
 
       <!-- Pricing Cards -->
       <LandingPricingCards />
+
+      <div class="flex flex-col gap-1 items-center justify-center text-center">
+        <p
+          v-for="note in pricingNotes"
+          :key="note"
+          class="text-lg text-muted-foreground max-w-2xl"
+        >
+          {{ $t(note) }}
+        </p>
+      </div>
+
+      <p class="text-lg text-muted-foreground max-w-2xl">
+        {{ $t('pricing.comingSoon') }}
+      </p>
     </div>
   </div>
 </template>
