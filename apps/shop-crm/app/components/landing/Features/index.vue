@@ -13,7 +13,7 @@
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto w-full">
+    <div class="grid md:grid-cols-2 gap-10 px-4 max-w-6xl mx-auto w-full">
       <LandingFeaturesCards />
     </div>
   </div>

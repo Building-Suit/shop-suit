@@ -88,4 +88,19 @@ export default defineI18nLocale(async locale => ({
       description2: 'مصروفات لمرة واحدة أو متكررة',
     },
   },
+
+  /* Landing Inventory */
+  inventory: {
+    proPlanOnly: 'الخطة الـ Pro فقط',
+    neverLoseTrackOfYour: 'مش هتضيع منك حركة',
+    stock: 'المخزون',
+    again: 'تاني',
+    description:
+      'بطل التخمين في التكاليف. سجّل كل عملية شراء، اعرف ربحك الحقيقي في كل بيعة، ومتتفاجئش بنقص المخزون.',
+    feature01: 'زيادة تلقائية في المخزون مع فواتير الموردين',
+    feature02: 'خصم تلقائي من المخزون عند فواتير العملاء',
+    feature03: 'متابعة ذكية للتكلفة (بنظام FIFO)',
+    feature04: 'دقة على مستوى الدُفعات',
+    perfectForShops: 'مثالي للمحلات اللي بتبيع منتجات، مش خدمات بس.',
+  },
 }));

@@ -88,4 +88,19 @@ export default defineI18nLocale(async locale => ({
       description2: 'One-time or recurring expenses',
     },
   },
+
+  /* Landing Inventory */
+  inventory: {
+    proPlanOnly: 'Pro plan only',
+    neverLoseTrackOfYour: 'Never lose track of your',
+    stock: 'stock',
+    again: 'again',
+    description:
+      'Stop guessing what things cost. Track every purchase, know your real profit on every sale, and never run out of stock unexpectedly.',
+    feature01: 'Automatic stock increase with vendor invoices',
+    feature02: 'Automatic stock deduction on client invoices',
+    feature03: 'Smart cost tracking (FIFO-based)',
+    feature04: 'Batch-level accuracy',
+    perfectForShops: 'Perfect for shops that sell products, not just services.',
+  },
 }));

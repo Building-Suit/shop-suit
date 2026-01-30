@@ -22,6 +22,8 @@ const sections = [
 
   <LandingFeatures />
 
+  <LandingInventory />
+
   <div
     v-for="section in sections"
     :key="section.id"
