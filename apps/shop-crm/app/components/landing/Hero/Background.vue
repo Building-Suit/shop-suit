@@ -36,7 +36,7 @@ const { withSvg = true, svgFill = 'fill-background' } = defineProps<{
     radial-gradient(
       circle at top right,
       rgba(255, 255, 255, 0.08),
-      transparent 40%
+      transparent 60%
     ),
     linear-gradient(
       180deg,

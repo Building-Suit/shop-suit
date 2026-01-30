@@ -16,4 +16,6 @@ definePageMeta({
   <LandingPricing />
 
   <LandingFAQs />
+
+  <LandingClosingCTA />
 </template>

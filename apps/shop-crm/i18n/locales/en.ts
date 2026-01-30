@@ -142,4 +142,12 @@ export default defineI18nLocale(async locale => ({
     q8: 'Can I use this in Arabic?',
     a8: `Yes. The entire platform is available in Arabic and English. You can switch anytime.`,
   },
+
+  /* Landing Closing CTA */
+  closingCTA: {
+    title: 'Ready to Take Control of',
+    subtitle: 'Your Business?',
+    description:
+      "Join hundreds of Egyptian shop owners who've simplified their operations with Shop CRM.",
+  },
 }));

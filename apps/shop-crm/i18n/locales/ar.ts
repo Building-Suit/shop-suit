@@ -142,4 +142,11 @@ export default defineI18nLocale(async locale => ({
     q8: 'ينفع أستخدم النظام بالعربي؟',
     a8: 'أيوه. المنصة متاحة بالعربي والإنجليزي، وتقدر تغيّر اللغة في أي وقت.',
   },
+
+  /* Landing Closing CTA */
+  closingCTA: {
+    title: 'جاهز تاخد خطوة؟',
+    subtitle: 'نظّم محلك النهاردة',
+    description: 'انضم لمئات أصحاب المحلات اللي سهّلوا شغلهم مع Shop CRM.',
+  },
 }));
