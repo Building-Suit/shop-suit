@@ -103,4 +103,12 @@ export default defineI18nLocale(async locale => ({
     feature04: 'دقة على مستوى الدُفعات',
     perfectForShops: 'مثالي للمحلات اللي بتبيع منتجات، مش خدمات بس.',
   },
+
+  /* Landing Pricing */
+  pricing: {
+    title: 'أسعار بسيطة وواضحة',
+    subtitle: 'من غير تعقيد',
+    description:
+      'ابدأ مجانًا وطور خطتك وقت ما تحب. من غير رسوم مخفية وتقدر تلغي في أي وقت.',
+  },
 }));

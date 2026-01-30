@@ -9,7 +9,7 @@ const proFeatures = [
 
 <template>
   <div
-    class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl w-full mx-auto py-36"
+    class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center px-4 max-w-6xl w-full mx-auto py-36"
   >
     <div class="flex flex-col gap-6">
       <Badge class="text-md bg-secondary/20 text-secondary">

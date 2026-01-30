@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div id="features" class="bg-muted py-36 flex flex-col gap-12">
-    <div class="text-center flex flex-col items-center max-w-6xl mx-auto">
+  <div id="features" class="bg-muted/40 py-36 flex flex-col gap-12">
+    <div class="text-center flex flex-col items-center px-4 max-w-6xl mx-auto">
       <h1 class="text-3xl font-bold text-primary sm:text-4xl lg:text-5xl">
         {{ $t('features.title') }}
         <span class="text-secondary">{{ $t('features.subtitle') }}</span>

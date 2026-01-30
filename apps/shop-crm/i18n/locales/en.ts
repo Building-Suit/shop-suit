@@ -103,4 +103,12 @@ export default defineI18nLocale(async locale => ({
     feature04: 'Batch-level accuracy',
     perfectForShops: 'Perfect for shops that sell products, not just services.',
   },
+
+  /* Landing Pricing */
+  pricing: {
+    title: 'Simple, Transparent',
+    subtitle: 'Pricing',
+    description:
+      "Start free, upgrade when you're ready. No hidden fees, cancel anytime.",
+  },
 }));
