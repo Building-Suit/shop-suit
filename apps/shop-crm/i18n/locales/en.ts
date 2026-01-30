@@ -119,4 +119,27 @@ export default defineI18nLocale(async locale => ({
     },
     comingSoon: 'Coming soon: Multi-shop support & more.',
   },
+
+  /* Landing FAQs */
+  faqs: {
+    title: 'Frequently Asked',
+    subtitle: 'Questions',
+    description: 'Everything you need to know about Shop CRM',
+    q1: 'What happens after my trial ends?',
+    a1: `You'll have 3 days to subscribe. After that, your account is locked until you pay. If locked for 90 days, your data is deleted.`,
+    q2: 'Can I switch from Basic to Pro?',
+    a2: `Yes, anytime. If you're still on trial, you'll start paying immediately. If you've already paid, you'll be charged the difference on your next billing cycle.`,
+    q3: 'Do I need to enter all my data before I start?',
+    a3: `No. You can create your first invoice in under 2 minutes. Add more data as you go.`,
+    q4: 'Can I export my data?',
+    a4: `Yes. You can export any table as Excel/CSV anytime.`,
+    q5: 'Does this work offline?',
+    a5: `No, you need an internet connection.`,
+    q6: 'What payment methods do you accept?',
+    a6: `We use Visa / Credit Card for Egyptian businesses.`,
+    q7: 'Is my data secure?',
+    a7: `Yes. Your data is encrypted and private. We never share it with anyone.`,
+    q8: 'Can I use this in Arabic?',
+    a8: `Yes. The entire platform is available in Arabic and English. You can switch anytime.`,
+  },
 }));
