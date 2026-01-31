@@ -2,7 +2,21 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@vueuse/nuxt'],
+
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    },
+  },
+
+  modules: [
+    '@nuxtjs/tailwindcss',
+    'shadcn-nuxt',
+    '@vueuse/nuxt',
+    '@nuxt/icon',
+    '@nuxtjs/i18n',
+  ],
+
   shadcn: {
     /**
      * Prefix for all the imported component.
@@ -15,6 +29,32 @@ export default defineNuxtConfig({
      * @link https://nuxt.com/docs/api/nuxt-config#alias
      * @default "@/components/ui"
      */
-    componentDir: '@/components/ui'
-  }
-})
+    componentDir: '@/components/ui',
+  },
+
+  i18n: {
+    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+    strategy: 'no_prefix',
+    defaultLocale: 'ar',
+    defaultDirection: 'rtl',
+    detectBrowserLanguage: false, // Disable browser detection
+    locales: [
+      {
+        code: 'ar',
+        name: 'العربية',
+        file: 'ar.ts',
+        dir: 'rtl',
+      },
+      {
+        code: 'en',
+        name: 'English',
+        file: 'en.ts',
+        dir: 'ltr',
+      },
+    ],
+    langDir: 'locales',
+    experimental: {
+      localeDetector: 'localeDetector.ts',
+    },
+  },
+});
