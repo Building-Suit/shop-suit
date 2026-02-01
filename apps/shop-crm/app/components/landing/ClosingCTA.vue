@@ -44,11 +44,6 @@ import { NuxtLink } from '#components';
             {{ $t('hero.noCreditCard') }}
           </div>
         </div>
-
-        <LandingButton
-          :text="$t('landing.hero.seeHowItWorks')"
-          variant="outline"
-        />
       </div>
     </div>
   </LandingHeroBackground>
