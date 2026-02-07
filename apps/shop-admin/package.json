@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@buildingsuit/supabase": "workspace:*",
     "@supabase/supabase-js": "2.39.4",
     "@nuxtjs/color-mode": "4.0.0",
     "@nuxtjs/i18n": "10.2.1",
