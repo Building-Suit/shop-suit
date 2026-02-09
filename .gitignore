@@ -30,6 +30,6 @@ logs/
 # Testing
 coverage/
 
-# Supabase
-supabase/.branches/
-supabase/.temp/
+# Docs
+.agent/
+docs/
