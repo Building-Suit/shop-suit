@@ -3,6 +3,7 @@ import {
   createResolver,
   addPlugin,
   addImportsDir,
+  addServerImportsDir,
 } from "@nuxt/kit";
 import type { ApiLayerConfig } from "./runtime/composables/useApiConfig";
 
@@ -48,9 +49,13 @@ export default defineNuxtModule<ApiLayerConfig>({
       authRoutes: options.authRoutes,
     };
 
+    // Client-side auto-imports
     addImportsDir(resolver.resolve("./runtime/composables"));
     addImportsDir(resolver.resolve("./runtime/contracts"));
     addImportsDir(resolver.resolve("./runtime/factory"));
+
+    // Server-side auto-imports
+    addServerImportsDir(resolver.resolve("./runtime/server/utils"));
 
     addPlugin(resolver.resolve("./runtime/plugin"));
   },

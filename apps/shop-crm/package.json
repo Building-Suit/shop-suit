@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@buildingsuit/api-layer": "workspace:*",
     "@nuxt/icon": "2.2.1",
     "@nuxtjs/i18n": "10.2.1",
     "class-variance-authority": "^0.7.1",

@@ -10,12 +10,18 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@buildingsuit/api-layer',
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@vueuse/nuxt',
     '@nuxt/icon',
     '@nuxtjs/i18n',
   ],
+
+  apiLayer: {
+    portalKey: process.env.PORTAL,
+    apiBaseUrl: process.env.API_BASE,
+  },
 
   shadcn: {
     /**
@@ -33,7 +39,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+    baseUrl: process.env.APP_URL,
     strategy: 'no_prefix',
     defaultLocale: 'ar',
     defaultDirection: 'rtl',
