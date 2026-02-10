@@ -19,11 +19,8 @@ export default defineNuxtConfig({
   ],
 
   apiLayer: {
-    portalKey: 'shop-crm',
-    // This is the URL of your BFF (Backend For Frontend)
-    // In production, this might be a subdomain like https://api.yourdomain.com
-    // In development, we use the same host as Nuxt but with a different port (e.g. 3001)
-    apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL,
+    portalKey: process.env.PORTAL,
+    apiBaseUrl: process.env.API_BASE,
   },
 
   shadcn: {
@@ -42,7 +39,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    baseUrl: process.env.NUXT_PUBLIC_BASE_URL,
+    baseUrl: process.env.APP_URL,
     strategy: 'no_prefix',
     defaultLocale: 'ar',
     defaultDirection: 'rtl',
