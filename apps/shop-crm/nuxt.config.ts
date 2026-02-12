@@ -3,6 +3,23 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    // Server-only secrets
+    supabase: {
+      serviceKey: process.env.SUPABASE_SERVICE_KEY,
+    },
+
+    // Public config
+    public: {
+      appUrl: process.env.APP_URL,
+      portalKey: process.env.PORTAL,
+      apiBaseUrl: process.env.API_BASE,
+
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY,
+    },
+  },
+
   router: {
     options: {
       scrollBehaviorType: 'smooth',
