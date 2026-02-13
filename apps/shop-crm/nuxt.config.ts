@@ -5,9 +5,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     // Server-only secrets
-    supabase: {
-      serviceKey: process.env.SUPABASE_SERVICE_KEY,
-    },
+    supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY,
 
     // Public config
     public: {
@@ -16,7 +14,7 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.API_BASE,
 
       supabaseUrl: process.env.SUPABASE_URL,
-      supabaseKey: process.env.SUPABASE_KEY,
+      supabaseKey: process.env.SUPABASE_ANON_KEY,
     },
   },
 
