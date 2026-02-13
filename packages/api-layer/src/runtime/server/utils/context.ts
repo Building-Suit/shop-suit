@@ -3,10 +3,9 @@
  * Provides cached access to portal and shop context
  */
 
-import { useRuntimeConfig, createError } from "#imports";
+import { useRuntimeConfig, createError, getCookie, getHeader } from "#imports";
 import { useApiServer } from "./api-server";
 import type { Tables } from "../types/database";
-import { getCookie, getHeader } from "#build/types/nitro-imports";
 
 // In-memory cache for server context
 const contextCache = new Map<

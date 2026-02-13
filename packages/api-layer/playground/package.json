@@ -8,7 +8,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "my-module": "latest",
+    "@buildingsuit/api-layer": "latest",
     "nuxt": "^4.3.0"
   }
 }
