@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
-  modules: ['my-module'],
+  modules: ["@buildingsuit/api-layer"],
   devtools: { enabled: true },
-  compatibilityDate: 'latest',
-  myModule: {},
-})
+  compatibilityDate: "latest",
+  apiLayer: {
+    portalKey: "test",
+    apiBaseUrl: "/api",
+  },
+});

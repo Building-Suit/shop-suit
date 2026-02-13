@@ -12,7 +12,7 @@
  * - Select: ?select=id,name,email
  */
 
-import { useRuntimeConfig } from "#app";
+import { useRuntimeConfig } from "#imports";
 import type { Tables, TablesInsert, TablesUpdate } from "../types/database";
 
 export interface ApiServerOptions {

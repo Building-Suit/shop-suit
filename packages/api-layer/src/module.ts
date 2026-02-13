@@ -4,6 +4,8 @@ import {
   addPlugin,
   addImportsDir,
   addServerImportsDir,
+  hasNuxtModule,
+  installModule,
 } from "@nuxt/kit";
 import type { ApiLayerConfig } from "./runtime/composables/useApiConfig";
 
@@ -36,12 +38,12 @@ export default defineNuxtModule<ApiLayerConfig>({
       oauthGoogle: "/auth/oauth/google",
     },
   },
-  setup(options, nuxt) {
+  async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
-    if (!options.portalKey) {
-      throw new Error("[api-layer] portalKey is required in module options");
-    }
+    // if (!options.portalKey) {
+    //   throw new Error("[api-layer] portalKey is required in module options");
+    // }
 
     nuxt.options.runtimeConfig.public.apiLayer = {
       portalKey: options.portalKey,
