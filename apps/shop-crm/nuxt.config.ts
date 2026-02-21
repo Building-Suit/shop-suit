@@ -36,6 +36,9 @@ export default defineNuxtConfig({
   apiLayer: {
     portalKey: process.env.PORTAL,
     apiBaseUrl: process.env.API_BASE,
+    billing: {
+      plans: '/billing/plans',
+    },
   },
 
   shadcn: {

@@ -118,6 +118,24 @@ export default defineI18nLocale(async locale => ({
         "Need to upgrade mid-trial? You'll start paying immediately, but keep your data.",
     },
     comingSoon: 'Coming soon: Multi-shop support & more.',
+
+    EGP: 'EGP',
+    USD: 'USD',
+    monthly: 'monthly',
+    yearly: 'yearly',
+
+    trial: '{trialDays}-day free trial',
+    mostPopular: 'Most Popular',
+
+    features: ['Employees', 'Invoices', 'Expenses', 'Dashboard', 'Reports'],
+    inventoryFeatures: [
+      'Automatic stock increase with vendor invoices',
+      'Automatic stock deduction on client invoices',
+      'Smart cost tracking (FIFO-based)',
+      'Batch-level accuracy',
+    ],
+
+    cta: 'Get Started',
   },
 
   /* Landing FAQs */
