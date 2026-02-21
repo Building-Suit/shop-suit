@@ -3,8 +3,6 @@ import { Tables } from '../../../../../packages/api-layer/dist/runtime/server/ty
 export default defineEventHandler(async event => {
   const portal = await getCurrentPortal();
 
-  console.log('portal', portal);
-
   const { data: plans = [], error } = await useApiServer<Tables<'plans'>[]>(
     'plans',
     {

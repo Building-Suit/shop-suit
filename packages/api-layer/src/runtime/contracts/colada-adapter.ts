@@ -16,7 +16,7 @@ export const createColadaAdapter = (): ApiAdapter => {
         key: options.key,
         query: options.query,
         staleTime: options.staleTime,
-        enabled: options.enabled,
+        // enabled: options.enabled,
       });
 
       return {

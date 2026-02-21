@@ -48,6 +48,7 @@ export default defineNuxtModule<ApiLayerConfig>({
     nuxt.options.runtimeConfig.public.apiLayer = {
       portalKey: options.portalKey,
       apiBaseUrl: options.apiBaseUrl,
+      billing: options.billing,
       authRoutes: options.authRoutes,
     };
 
