@@ -17,6 +17,10 @@ export const createColadaAdapter = (): ApiAdapter => {
         query: options.query,
         staleTime: options.staleTime,
         // enabled: options.enabled,
+        // During SSR, swallow query errors into `error` state instead of
+        // letting the onServerPrefetch rejection crash the whole page render
+        // (full-screen Nuxt error page). The UI renders its error branch.
+        ssrCatchError: true,
       })
 
       return {
