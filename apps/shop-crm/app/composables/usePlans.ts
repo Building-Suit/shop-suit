@@ -1,5 +1,7 @@
-export const usePlans = () => {
-  const { data, isLoading, error } = useQueryContract(usePlansQuery());
+import { useQueryContract, usePlansQuery } from '#imports';
 
-  return { data, isLoading, error };
+export const usePlans = () => {
+  const { data, isLoading, error, refresh } = useQueryContract(usePlansQuery());
+
+  return { data, isLoading, error, refresh };
 };

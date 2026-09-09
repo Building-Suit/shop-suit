@@ -44,12 +44,12 @@ const industries = [
     </p>
 
     <div class="flex relative overflow-hidden w-5/6 md:w-2/3 xl:w-1/3 mx-auto">
-      <!-- Gradient fade edges -->
+      <!-- Gradient fade edges (semantic surface color; physical edges so the fade direction stays correct in RTL) -->
       <div
-        class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-white to-transparent z-10"
+        class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-background to-transparent z-10"
       />
       <div
-        class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-white to-transparent z-10"
+        class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-background to-transparent z-10"
       />
 
       <ul class="flex items-center gap-8 animate-infinite-scroll">

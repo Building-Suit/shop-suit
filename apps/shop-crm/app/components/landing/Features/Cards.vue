@@ -2,28 +2,28 @@
 const features = [
   {
     icon: 'lucide:file-text',
-    iconColorClass: 'bg-blue-500/10 text-blue-600',
+    iconColorClass: 'status-info',
     title: 'invoicesAndServices.title',
     description: 'invoicesAndServices.description',
     description2: 'invoicesAndServices.description2',
   },
   {
     icon: 'lucide:users',
-    iconColorClass: 'bg-purple-500/10 text-purple-600',
+    iconColorClass: 'status-success',
     title: 'employeesManagement.title',
     description: 'employeesManagement.description',
     description2: 'employeesManagement.description2',
   },
   {
     icon: 'lucide:chart-line',
-    iconColorClass: 'bg-green-500/10 text-green-600',
+    iconColorClass: 'status-info',
     title: 'dashboardAndReports.title',
     description: 'dashboardAndReports.description',
     description2: 'dashboardAndReports.description2',
   },
   {
     icon: 'lucide:wallet',
-    iconColorClass: 'bg-orange-500/10 text-orange-600',
+    iconColorClass: 'status-warning',
     title: 'expensesTracking.title',
     description: 'expensesTracking.description',
     description2: 'expensesTracking.description2',

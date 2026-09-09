@@ -14,27 +14,28 @@ export default defineEventHandler(async event => {
   }
 
   // Get user from Supabase auth
-  const { data: user, error } = await useApiServer('/user', {
+  const { data: user, error } = await useApiServer<{ id: string; email?: string }>('/user', {
     endpoint: 'auth',
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
   });
 
-  if (error) {
+  if (error || !user) {
     throw createError({
       statusCode: 401,
       message: 'Unauthorized',
     });
   }
 
-  // Get profile from database
+  // Get profile from database (with the user's JWT so RLS authorizes the read)
   const { data: profiles } = await useApiServer('/profiles', {
     params: {
-      select: 'id, portal_id, display_name, email_snapshot',
+      select: 'id,portal_id,display_name,email_snapshot',
       user_id: `eq.${user.id}`,
     },
     headers: {
+      Authorization: `Bearer ${accessToken}`,
       Accept: 'application/vnd.pgrst.object+json',
     },
   });

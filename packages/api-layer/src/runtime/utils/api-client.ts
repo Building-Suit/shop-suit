@@ -1,10 +1,10 @@
-import { useApiConfig } from "../composables/useApiConfig";
-import type { FetchOptions } from "ofetch";
-import { createError } from "h3";
+import { useApiConfig } from '../composables/useApiConfig'
+import type { FetchOptions } from 'ofetch'
+import { createError } from 'h3'
 
 export const createApiClient = () => {
-  const config = useApiConfig();
-  const apiBaseUrl = config.apiBaseUrl || "/api";
+  const config = useApiConfig()
+  const apiBaseUrl = config.apiBaseUrl || '/api'
 
   const defaults: FetchOptions = {
     baseURL: apiBaseUrl, // Enforce BFF pattern: All calls go to /api
@@ -12,7 +12,7 @@ export const createApiClient = () => {
     // .1 Request Interceptor
     async onRequest({ options }) {
       // Add any global headers here (e.g. Correlation IDs)
-      options.headers = new Headers(options.headers);
+      options.headers = new Headers(options.headers)
     },
 
     // 2. Response Error Interceptor (Global Error Handling)
@@ -21,7 +21,7 @@ export const createApiClient = () => {
       if (response.status === 401) {
         // Redirect to login if on client
         if (import.meta.client) {
-          window.location.href = "/auth/login";
+          window.location.href = '/auth/login'
         }
       }
 
@@ -30,9 +30,9 @@ export const createApiClient = () => {
         statusCode: response.status,
         statusMessage: response.statusText,
         data: response._data,
-      });
+      })
     },
-  };
+  }
 
-  return $fetch.create(defaults);
-};
+  return $fetch.create(defaults)
+}

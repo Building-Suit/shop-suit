@@ -24,7 +24,9 @@ export default defineEventHandler(async event => {
   const portalId = portal.id;
 
   // 3. Create Supbase auth user
-  const { data: authUser, error: authError } = await useApiServer('/signup', {
+  const { data: authUser, error: authError } = await useApiServer<{
+    user: { id: string; email?: string };
+  }>('/signup', {
     endpoint: 'auth',
     method: 'POST',
     body: {
@@ -34,14 +36,20 @@ export default defineEventHandler(async event => {
     },
   });
 
-  if (authError) {
+  if (authError || !authUser) {
+    const message
+      = typeof authError === 'object' && authError !== null && 'message' in authError
+        ? String((authError as { message?: string }).message)
+        : 'Signup failed';
     throw createError({
       statusCode: 400,
-      message: authError.message || 'Signup failed',
+      message,
     });
   }
 
   // 4. Create profile (if not handled by DB trigger)
+  // Server-side write with the service key: profiles RLS intentionally has no
+  // client insert policy, and the service key never leaves the server.
   await useApiServer('/profiles', {
     method: 'POST',
     body: {
@@ -50,6 +58,7 @@ export default defineEventHandler(async event => {
       display_name: displayName,
       email_snapshot: email,
     },
+    useServiceKey: true,
     headers: {
       Prefer: 'return=representation',
     },

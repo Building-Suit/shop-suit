@@ -32,4 +32,5 @@ coverage/
 
 # Docs
 .agent/
-docs/
+docs/*
+!docs/rebuild/

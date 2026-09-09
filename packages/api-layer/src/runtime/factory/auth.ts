@@ -1,96 +1,121 @@
-import { useApiConfig } from "../composables/useApiConfig";
-import { useApiClient } from "../composables/useRefApi";
-import type { ApiQueryOptions } from "../contracts/types";
+import { useApiConfig } from '../composables/useApiConfig'
+import { useApiClient } from '../composables/useRefApi'
+import type { ApiMutationOptions, ApiQueryOptions } from '../contracts/types'
 import type {
   GoogleOAuthPayload,
   LoginPayload,
   ResetPasswordPayload,
   Session,
   SignupPayload,
-} from "../types/auth";
+} from '../types/auth'
 
 // 1. Query Keys
 export const authKeys = {
-  all: ["auth"] as const,
+  all: ['auth'] as const,
   session: (portalKey: string) =>
-    [...authKeys.all, "session", portalKey] as const,
-};
+    [...authKeys.all, 'session', portalKey] as const,
+}
 
-// 2. Quiries
-export const useSessionQuery = (
-  portalKey: string,
-): ApiQueryOptions<Session> => {
-  const api = useApiClient();
-  const config = useApiConfig();
+// 2. Queries
+export const useSessionQuery = (): ApiQueryOptions<Session> => {
+  const api = useApiClient()
+  const config = useApiConfig()
+  const sessionRoute = config.authRoutes?.session ?? '/auth/session'
 
   return {
     key: [...authKeys.session(config.portalKey)],
     query: () =>
-      api<Session>(config.authRoutes?.session!, {
+      api<Session>(sessionRoute, {
         query: { portal: config.portalKey },
       }),
     staleTime: 5 * 60 * 1000, // 5 minutes
-  };
-};
+  }
+}
 
-// 3. Mutations
-export const useLoginMutation = () => {
-  const api = useApiClient();
-  const config = useApiConfig();
+// 3. Mutations — contract-shaped so pages can use useMutationContract(...)
+// with mutate/mutateAsync, status and invalidation support.
+export const useLoginMutation = (): ApiMutationOptions<
+  unknown,
+  LoginPayload,
+  unknown
+> => {
+  const api = useApiClient()
+  const config = useApiConfig()
+  const loginRoute = config.authRoutes?.login ?? '/auth/login'
 
   return {
-    mutationFn: (data: LoginPayload) =>
-      api(config.authRoutes?.login!, {
-        method: "POST",
+    mutation: (data: LoginPayload) =>
+      api(loginRoute, {
+        method: 'POST',
         body: data,
       }),
-  };
-};
+  }
+}
 
-export const useSignupMutation = () => {
-  const api = useApiClient();
-  const config = useApiConfig();
+export const useSignupMutation = (): ApiMutationOptions<
+  unknown,
+  SignupPayload,
+  unknown
+> => {
+  const api = useApiClient()
+  const config = useApiConfig()
+  const signupRoute = config.authRoutes?.signup ?? '/auth/signup'
 
   return {
-    mutationFn: (data: SignupPayload) =>
-      api(config.authRoutes?.signup!, {
-        method: "POST",
+    mutation: (data: SignupPayload) =>
+      api(signupRoute, {
+        method: 'POST',
         body: data,
       }),
-  };
-};
+  }
+}
 
-export const useGoogleOAuthMutation = () => {
-  const api = useApiClient();
-  const config = useApiConfig();
+export const useGoogleOAuthMutation = (): ApiMutationOptions<
+  unknown,
+  GoogleOAuthPayload,
+  unknown
+> => {
+  const api = useApiClient()
+  const config = useApiConfig()
+  const oauthRoute = config.authRoutes?.oauthGoogle ?? '/auth/oauth/google'
 
   return {
-    mutationFn: (data: GoogleOAuthPayload) =>
-      api(config.authRoutes?.oauthGoogle!, {
-        method: "POST",
+    mutation: (data: GoogleOAuthPayload) =>
+      api(oauthRoute, {
+        method: 'POST',
         body: data,
       }),
-  };
-};
+  }
+}
 
-export const useLogoutMutation = () => {
-  const api = useApiClient();
-  const config = useApiConfig();
-
-  return {
-    mutationFn: () => api(config.authRoutes?.logout!, { method: "POST" }),
-  };
-};
-
-export const useResetPasswordMutation = () => {
-  const api = useApiClient();
-  const config = useApiConfig();
+export const useLogoutMutation = (): ApiMutationOptions<
+  unknown,
+  void,
+  unknown
+> => {
+  const api = useApiClient()
+  const config = useApiConfig()
+  const logoutRoute = config.authRoutes?.logout ?? '/auth/logout'
 
   return {
-    mutationFn: (data: ResetPasswordPayload) =>
-      api(config.authRoutes?.resetPassword!, {
-        method: "POST",
+    mutation: () => api(logoutRoute, { method: 'POST' }),
+  }
+}
+
+export const useResetPasswordMutation = (): ApiMutationOptions<
+  unknown,
+  ResetPasswordPayload,
+  unknown
+> => {
+  const api = useApiClient()
+  const config = useApiConfig()
+  const resetRoute = config.authRoutes?.resetPassword ?? '/auth/reset-password'
+
+  return {
+    mutation: (data: ResetPasswordPayload) =>
+      api(resetRoute, {
+        method: 'POST',
         body: data,
       }),
-  };
-};
+  }
+}

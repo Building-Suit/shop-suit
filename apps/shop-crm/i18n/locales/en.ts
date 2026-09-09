@@ -1,7 +1,43 @@
 export default defineI18nLocale(async locale => ({
+  /* Common */
+  common: {
+    retry: 'Retry',
+  },
+
   /* Landing Header CTAs */
   login: 'Login',
   startFreeTrial: 'Start Free Trial',
+
+  /* Accessibility labels */
+  a11y: {
+    switchToLight: 'Switch to light mode',
+    switchToDark: 'Switch to dark mode',
+  },
+
+  /* Auth pages */
+  auth: {
+    loginTitle: 'Welcome back',
+    loginSubtitle: 'Log in to keep managing your shop.',
+    email: 'Email',
+    emailPlaceholder: 'Enter your email',
+    password: 'Password',
+    passwordPlaceholder: 'Enter your password',
+    passwordHint: 'At least 6 characters.',
+    forgotPassword: 'Forgot password?',
+    loginAction: 'Log in',
+    noAccount: "Don't have an account?",
+    signupAction: 'Create account',
+    signupTitle: 'Start for free',
+    signupSubtitle: 'Try Shop CRM free for 30 days. No credit card required.',
+    displayName: 'Name',
+    displayNamePlaceholder: 'Enter your name',
+    haveAccount: 'Already have an account?',
+    forgotTitle: 'Reset your password',
+    forgotSubtitle: 'Enter your email and we will send you a reset link.',
+    resetAction: 'Send reset link',
+    resetSent: "If that email is registered, a reset link is on its way.",
+    backToLogin: 'Back to login',
+  },
 
   nav: {
     /* Landing Nav Links */
@@ -118,6 +154,9 @@ export default defineI18nLocale(async locale => ({
         "Need to upgrade mid-trial? You'll start paying immediately, but keep your data.",
     },
     comingSoon: 'Coming soon: Multi-shop support & more.',
+
+    loadError: 'Something went wrong loading the plans. Please try again.',
+    empty: 'No plans are available right now. Please check back later.',
 
     EGP: 'EGP',
     USD: 'USD',

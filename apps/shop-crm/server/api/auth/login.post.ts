@@ -1,15 +1,25 @@
 import { useApiServer } from '../../../../../packages/api-layer/dist/runtime/server/utils/api-server';
 
+interface GoTrueSessionResponse {
+  access_token: string;
+  refresh_token: string;
+  expires_in: number;
+  user: { id: string; email?: string };
+}
+
 export default defineEventHandler(async event => {
   const { email, password } = await readBody(event);
 
-  const { data, error } = await useApiServer('/token?grant_type=password', {
-    endpoint: 'auth',
-    method: 'POST',
-    body: { email, password },
-  });
+  const { data, error } = await useApiServer<GoTrueSessionResponse>(
+    '/token?grant_type=password',
+    {
+      endpoint: 'auth',
+      method: 'POST',
+      body: { email, password },
+    },
+  );
 
-  if (error) {
+  if (error || !data) {
     throw createError({
       statusCode: 401,
       message: `Invalid credentials`,
