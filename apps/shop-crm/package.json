@@ -3,11 +3,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "prepare:api-layer": "pnpm --filter @buildingsuit/api-layer prepack",
+    "build": "pnpm run prepare:api-layer && nuxt build",
+    "dev": "pnpm run prepare:api-layer && nuxt dev",
+    "generate": "pnpm run prepare:api-layer && nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "pnpm run prepare:api-layer && nuxt prepare"
   },
   "dependencies": {
     "@buildingsuit/api-layer": "workspace:*",
