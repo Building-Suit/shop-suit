@@ -1,3 +1,5 @@
+import { ref } from 'vue';
+
 const isMenuOpen = ref(false);
 
 export const useNavigation = () => {

@@ -15,6 +15,7 @@ export default createConfigForNuxt({
     ],
   },
 })
-  .append(
-    // your custom flat config here...
-  )
+  .append({
+    // Generated files are formatted by the Supabase CLI — do not lint them.
+    ignores: ['src/runtime/server/types/database.generated.ts'],
+  })

@@ -1,7 +1,43 @@
 export default defineI18nLocale(async locale => ({
+  /* Common */
+  common: {
+    retry: 'إعادة المحاولة',
+  },
+
   /* Landing Header CTAs */
   login: 'تسجيل الدخول',
   startFreeTrial: 'ابدأ التجربة المجانية',
+
+  /* Accessibility labels */
+  a11y: {
+    switchToLight: 'تحويل للوضع النهاري',
+    switchToDark: 'تحويل للوضع الليلي',
+  },
+
+  /* Auth pages */
+  auth: {
+    loginTitle: 'أهلاً بعودتك',
+    loginSubtitle: 'سجّل الدخول لمتابعة إدارة محلك.',
+    email: 'البريد الإلكتروني',
+    emailPlaceholder: 'اكتب بريدك الإلكتروني',
+    password: 'كلمة المرور',
+    passwordPlaceholder: 'اكتب كلمة المرور',
+    passwordHint: '6 أحرف على الأقل.',
+    forgotPassword: 'نسيت كلمة المرور؟',
+    loginAction: 'تسجيل الدخول',
+    noAccount: 'مش عندك حساب؟',
+    signupAction: 'إنشاء حساب',
+    signupTitle: 'ابدأ مجانًا',
+    signupSubtitle: 'جرّب Shop CRM مجانًا 30 يوم من غير كارت فيزا.',
+    displayName: 'الاسم',
+    displayNamePlaceholder: 'اكتب اسمك',
+    haveAccount: 'عندك حساب بالفعل؟',
+    forgotTitle: 'استعادة كلمة المرور',
+    forgotSubtitle: 'اكتب بريدك وهنبعتلك رابط لإعادة التعيين.',
+    resetAction: 'إرسال رابط إعادة التعيين',
+    resetSent: 'لو البريد مسجّل عندنا، هتوصلك رسالة فيها رابط إعادة التعيين.',
+    backToLogin: 'الرجوع لتسجيل الدخول',
+  },
 
   nav: {
     /* Landing Nav Links */
@@ -118,6 +154,9 @@ export default defineI18nLocale(async locale => ({
         'لو حابب تطوّر خطتك أثناء التجربة، الدفع بيبدأ فورًا وبياناتك بتفضل محفوظة.',
     },
     comingSoon: 'قريبًا: دعم أكتر من محل واحد ومميزات تانية.',
+
+    loadError: 'حصل خطأ في تحميل الخطط. حاول تاني.',
+    empty: 'مفيش خطط متاحة حاليًا. جرّب تاني بعدين.',
 
     EGP: 'جنيه مصري',
     USD: 'دولار أمريكي',

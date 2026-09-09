@@ -5,7 +5,9 @@ const { toggleMenu } = useNavigation();
 </script>
 
 <template>
-  <div>
+  <div class="flex items-center gap-2">
+    <ThemeToggle />
+
     <LanguageSwitcher />
 
     <Button

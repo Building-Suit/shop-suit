@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-slate-50 dark:bg-gray-950">
+  <div class="min-h-screen flex flex-col bg-background">
     <LandingHeader />
 
     <main class="flex flex-col flex-1 bg-background">

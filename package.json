@@ -9,8 +9,16 @@
     "dev:shop-crm": "pnpm --filter @buildingsuit/shop-crm dev",
     "build:shop-crm": "pnpm --filter @buildingsuit/api-layer run prepack && pnpm --filter @buildingsuit/shop-crm build",
     "test:shop-crm": "pnpm --filter @buildingsuit/shop-crm test",
+    "typecheck:shop-crm": "pnpm --filter @buildingsuit/shop-crm typecheck",
     "module:prepare": "pnpm --filter @buildingsuit/api-layer dev:prepare",
-    "module:build": "pnpm --filter @buildingsuit/api-layer run prepack"
+    "module:build": "pnpm --filter @buildingsuit/api-layer run prepack",
+    "module:test": "pnpm --filter @buildingsuit/api-layer test",
+    "module:lint": "pnpm --filter @buildingsuit/api-layer lint",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "supabase:types": "supabase gen types typescript --local > packages/api-layer/src/runtime/server/types/database.generated.ts",
+    "supabase:test": "docker exec -i supabase_db_shop-suit psql -U postgres -d postgres < supabase/tests/db_smoke_test.sql"
   },
   "pnpm-workspace": {
     "packages": [

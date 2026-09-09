@@ -23,8 +23,8 @@ jobs:
     strategy:
       matrix:
         app:
-          - name: shop-admin
-            path: apps/shop-admin
+          - name: shop-crm
+            path: apps/shop-crm
             site_id: 0906f956-d54d-4a93-8ade-3e1185cd2d2f
             node-version: 22
 
@@ -53,13 +53,22 @@ jobs:
         run: pnpm install
         # if: steps.check_changes.outputs.changed == 'true'
 
+      - name: Build
+        env:
+          # Nitro Netlify preset: emits .output/public (static) + .output/server (SSR functions)
+          NITRO_PRESET: netlify
+        run: pnpm run build:shop-crm
+        # if: steps.check_changes.outputs.changed == 'true'
+
       - name: Deploy to Netlify
         id: netlify_deploy
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          APP_URL: ${{ secrets.SHOP_ADMIN_URL }}
+          APP_URL: ${{ secrets.SHOP_CRM_URL }}
+          PORTAL: shop_suit
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
           STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
           STRIPE_PRICE_BASIC: ${{ secrets.STRIPE_PRICE_BASIC }}
@@ -68,8 +77,8 @@ jobs:
           npx netlify deploy \
             --prod \
             --cwd ${{ matrix.app.path }} \
-            --dir ${{ matrix.app.path }}/dist \
-            --functions .netlify/functions-internal \
+            --dir .output/public \
+            --functions .output/server \
             --site ${{ matrix.app.site_id }} \
             --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
         # if: steps.check_changes.outputs.changed == 'true'

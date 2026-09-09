@@ -10,7 +10,9 @@ export default defineEventHandler(async event => {
     redirect_to: callbackUrl,
   });
 
-  const url = `${config.public.apiBaseUrl}/auth/v1/authorize?${params}`;
+  // The authorize endpoint lives on Supabase (public runtime config), not on our
+  // BFF base URL (apiBaseUrl is "/api" — the previous value produced /api/auth/v1/...).
+  const url = `${config.public.supabaseUrl}/auth/v1/authorize?${params}`;
 
   return { url };
 });

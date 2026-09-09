@@ -1,30 +1,30 @@
 export interface SignupPayload {
-  email: string;
-  password: string;
-  displayName: string;
+  email: string
+  password: string
+  displayName: string
 }
 
 export interface LoginPayload {
-  email: string;
-  password: string;
+  email: string
+  password: string
 }
 
 export interface ResetPasswordPayload {
-  email: string;
+  email: string
 }
 
 export interface GoogleOAuthPayload {
-  redirectTo?: string;
+  redirectTo?: string
 }
 
 export interface Session {
   user: {
-    id: string;
-    email: string;
-  };
+    id: string
+    email: string
+  }
   profile: {
-    id: string;
-    portal_id: string;
-    displayName: string;
-  };
+    id: string
+    portal_id: string
+    displayName: string
+  }
 }
