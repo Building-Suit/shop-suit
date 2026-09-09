@@ -6,12 +6,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "prepare:api-layer": "pnpm --filter @buildingsuit/api-layer prepack",
-    "build": "pnpm run prepare:api-layer && nuxt build",
-    "dev": "pnpm run prepare:api-layer && nuxt dev",
-    "generate": "pnpm run prepare:api-layer && nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "pnpm run prepare:api-layer && nuxt prepare"
+    "dev:shop-crm": "pnpm --filter @buildingsuit/shop-crm dev",
+    "build:shop-crm": "pnpm --filter @buildingsuit/api-layer run prepack && pnpm --filter @buildingsuit/shop-crm build",
+    "test:shop-crm": "pnpm --filter @buildingsuit/shop-crm test",
+    "module:prepare": "pnpm --filter @buildingsuit/api-layer dev:prepare",
+    "module:build": "pnpm --filter @buildingsuit/api-layer run prepack"
   },
   "pnpm-workspace": {
     "packages": [
